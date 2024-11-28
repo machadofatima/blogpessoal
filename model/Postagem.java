@@ -21,8 +21,13 @@ public class Postagem {
     private Long id;
 
     @NotBlank(message = "O atributo título é obrigatório.") // Não permite que o Atributo seja Nulo ou contenha apenas espaços em branco
+    @Size(min = 5, max = 100, message = "O atributo titulo deve conter no mínimo 10 e no máximo 100 caractéres.")
+    private String titulo;
+
+    @NotBlank(message = "O atributo texto é obrigatório.") // Não permite que o Atributo seja Nulo ou contenha apenas espaços em branco
     @Size(min = 5, max = 100, message = "O atributo texto deve conter no mínimo 10 e no máximo 100 caractéres.")
     private String texto;
+
 
     @UpdateTimestamp // Obtém a data e a hora do Sistema Operacional e inserir no Atributo data toda vez que um Objeto da Classe Postagem for criado ou atualizado.
     private LocalDateTime data;
@@ -33,6 +38,14 @@ public class Postagem {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getTexto() {
