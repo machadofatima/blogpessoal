@@ -23,7 +23,7 @@ public class Postagem {
     private String titulo;
 
     @NotBlank(message = "O atributo texto é obrigatório.") // Não permite que o Atributo seja Nulo ou contenha apenas espaços em branco
-    @Size(min = 5, max = 2000, message = "O atributo texto deve conter no mínimo 5 e no máximo 2000 caractéres.")
+    @Size(min = 5, max = 20000, message = "O atributo texto deve conter no mínimo 5 e no máximo 2000 caractéres.")
     private String texto;
 
 
